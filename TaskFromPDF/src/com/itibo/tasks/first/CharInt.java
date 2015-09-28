@@ -8,15 +8,15 @@ package com.itibo.tasks.first;
  */
 
 public class CharInt implements Comparable<Object> {
-	
+
 	public Character c;
 	public Integer i;
-	
+
 	CharInt(Character c, Integer i) {
 		this.c = c;
 		this.i = i;
 	}
-	
+
 	public int compareTo(Object o) {
 		if (o instanceof CharInt) {
 			final int diff = i.intValue() - ((CharInt) o).i.intValue();

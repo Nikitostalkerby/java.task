@@ -1,8 +1,8 @@
 package com.itibo.tasks.first;
 
-import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -16,20 +16,45 @@ public class Program {
 
 	public static void main(String[] args) throws IOException {
 
-		System.out.println("Enter the line: ");
+		int a;
+		FileInputStream fin;
+		System.setProperty("console.encoding", "utf-8");
 
-		// enter the line
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		String str = br.readLine();
-		// get lowercase char array from string
+		try {
+			fin = new FileInputStream("D://workspace//Java//java.task//text.txt");
+		} catch (FileNotFoundException exc) {
+			System.out.println("File not found");
+			return;
+		}
+
+		String str = new String();
+
+		try {
+			do {
+				a = fin.read();
+				if (a != -1) {
+					System.out.print((char) a);
+					str += (char) a;
+				}
+			} while (a != -1);
+		} catch (IOException exc) {
+			System.out.println("Error reading file.");
+		} finally {
+			try {
+				fin.close();
+			} catch (IOException exc) {
+				System.out.println("Error closing file.");
+			}
+		}
+
 		char[] line = str.toLowerCase().toCharArray();
 
-		char[] vowels = { 'a', 'e', 'i', 'o', 'u', 'y' };
-		
+		char[] vowels = { 'a', 'e', 'i', 'o', 'u', 'y', 'à', 'ó', 'î', 'û', 'è', 'ý', 'ÿ', 'þ', '¸', 'å' };
+
 		// dictionary for saving key/value pair
 		Map<Character, Integer> dictionary = new HashMap<Character, Integer>();
 
-		System.out.println("Vowels: ");
+		System.out.println("\nVowels: ");
 
 		// knowing all vowel chars
 		for (int i = 0; i < line.length; i++) {
@@ -45,27 +70,26 @@ public class Program {
 				}
 			}
 		}
-		
+
 		for (char key : dictionary.keySet()) {
 			System.out.println(key + ": " + dictionary.get(key));
 		}
-		
-		
+
 		System.out.println("");
-		
+
 		// using class to saving similar chars
 		int index = dictionary.size();
 		CharInt[] ci = new CharInt[index];
 		index = 0;
-		
-		for(Map.Entry<Character, Integer>entry:dictionary.entrySet()) {
+
+		for (Map.Entry<Character, Integer> entry : dictionary.entrySet()) {
 			ci[index++] = new CharInt(entry.getKey(), entry.getValue());
 		}
-		
+
 		// lazy revers sorting
 		Arrays.sort(ci, Collections.reverseOrder());
 		System.out.println("Sorted map");
-		for (CharInt cin:ci) {
+		for (CharInt cin : ci) {
 			System.out.println(cin.c + ": " + cin.i);
 		}
 	}
