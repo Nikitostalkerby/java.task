@@ -12,22 +12,20 @@ public class Program {
 	public static void main(String[] args)
 		throws IOException {
 		
-		System.out.println("Enter the line: ");
+		
 		
 		BufferedReader br = new BufferedReader(new
 				InputStreamReader(System.in));
 		
 		String line = br.readLine();
 		
-		System.out.println("Your text is: \n" + line);
+		System.out.println(line);
 		
 		List<String> letters = new ArrayList<String> (
 				Arrays.asList("a", "e", "i", "o", "u", "y") );
 		
-		List<String> found = new ArrayList<String> ();
 		
-		
-		
+		System.out.println("Enter the line: ");
 
 	}
 

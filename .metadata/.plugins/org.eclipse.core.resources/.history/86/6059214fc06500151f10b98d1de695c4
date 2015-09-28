@@ -19,12 +19,10 @@ public class Program {
 		
 		String line = br.readLine();
 		
-		System.out.println("Your text is: \n" + line);
+		System.out.println("Your text is: \n", line);
 		
 		List<String> letters = new ArrayList<String> (
 				Arrays.asList("a", "e", "i", "o", "u", "y") );
-		
-		List<String> found = new ArrayList<String> ();
 		
 		
 		
