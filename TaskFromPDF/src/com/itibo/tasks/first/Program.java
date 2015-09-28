@@ -2,7 +2,6 @@ package com.itibo.tasks.first;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
@@ -18,55 +17,19 @@ public class Program {
 
 	public static void main(String[] args) throws IOException {
 
-		final String FILE = "./alphabet.utf8";
-		final String WIN1251 = "windows-1251";
-		final String UTF8 = "UTF-8";
-		
-		@SuppressWarnings("resource")
-		BufferedReader br = new BufferedReader(
-									new InputStreamReader(
-											new FileInputStream(FILE), WIN1251));
-		String qwerty = br.readLine();
-		System.out.println(qwerty);
-		
-		String restored = new String(qwerty.getBytes(WIN1251), UTF8);
-		System.out.println(restored);
-		
-		int a;
-		FileInputStream fin;
-		System.setProperty("console.encoding", "utf-8");
-		
 		final String FILENAME = ".//text.txt";
-
-		try {
-			fin = new FileInputStream(FILENAME);
-		} catch (FileNotFoundException exc) {
-			System.out.println("File not found");
-			return;
-		}
 		
-		
-
-		String str = new String();
-
-		try {
-			do {
-				a = fin.read();
-				if (a != -1) {
-					System.out.print((char) a);
-					str += (char) a;
-				}
-			} while (a != -1);
-		} catch (IOException exc) {
-			System.out.println("Error reading file.");
-		} finally {
-			try {
-				fin.close();
-			} catch (IOException exc) {
-				System.out.println("Error closing file.");
-			}
+		StringBuilder text = new StringBuilder();
+		@SuppressWarnings("resource")
+		BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(FILENAME), "UTF-8"));
+		String qwerty = null;
+		while((qwerty = br.readLine()) != null) {
+			text.append(qwerty);
 		}
-
+		System.out.println(text);
+		
+		String str = text.toString();
+		
 		char[] line = str.toLowerCase().toCharArray();
 
 		char[] vowels = { 'a', 'e', 'i', 'o', 'u', 'y', 'à', 'ó', 'î', 'û', 'è', 'ý', 'ÿ', 'þ', '¸', 'å' };
