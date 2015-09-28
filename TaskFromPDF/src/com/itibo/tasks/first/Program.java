@@ -1,10 +1,15 @@
-package first.task;
+package com.itibo.tasks.first;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
+
+/*
+ * Описание зачем оно надо
+ */
 
 public class Program {
 
@@ -34,11 +39,23 @@ public class Program {
 				}
 			}
 		}
-
+		
 		for (char key : dictionary.keySet()) {
 			System.out.println(key + ": " + dictionary.get(key));
 		}
-
+		
+		
+		System.out.println("");
+		
+		ValueComparator bvc = new ValueComparator(dictionary);
+		TreeMap<Character, Integer> sorted_dictionary = new TreeMap<Character, Integer>(bvc);
+		
+		sorted_dictionary.putAll(dictionary);
+		
+		System.out.println("results:");
+		
+		for (Character key : sorted_dictionary.keySet()) {
+			System.out.println(key + ":" + sorted_dictionary.get(key));
+		}
 	}
-
 }
