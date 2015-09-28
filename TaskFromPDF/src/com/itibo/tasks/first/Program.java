@@ -1,8 +1,10 @@
 package com.itibo.tasks.first;
 
+import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -16,16 +18,34 @@ public class Program {
 
 	public static void main(String[] args) throws IOException {
 
+		final String FILE = "./alphabet.utf8";
+		final String WIN1251 = "windows-1251";
+		final String UTF8 = "UTF-8";
+		
+		@SuppressWarnings("resource")
+		BufferedReader br = new BufferedReader(
+									new InputStreamReader(
+											new FileInputStream(FILE), WIN1251));
+		String qwerty = br.readLine();
+		System.out.println(qwerty);
+		
+		String restored = new String(qwerty.getBytes(WIN1251), UTF8);
+		System.out.println(restored);
+		
 		int a;
 		FileInputStream fin;
 		System.setProperty("console.encoding", "utf-8");
+		
+		final String FILENAME = ".//text.txt";
 
 		try {
-			fin = new FileInputStream("D://workspace//Java//java.task//text.txt");
+			fin = new FileInputStream(FILENAME);
 		} catch (FileNotFoundException exc) {
 			System.out.println("File not found");
 			return;
 		}
+		
+		
 
 		String str = new String();
 
