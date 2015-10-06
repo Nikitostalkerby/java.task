@@ -13,8 +13,10 @@ public class Program {
 		
 		// System.out.println(GratestCommonDivisor.gcd(3, 5));
 		
-		Packet firstPacket = new Packet(3, false);
-		Packet secondPacket = new Packet(5, false);
+		Packet firstPacket = new Packet(5);
+		Packet secondPacket = new Packet(3);
+		
+		Instruction ins = new Instruction(firstPacket, secondPacket, 4);
 		
 		/*
 		 * Block of real code
