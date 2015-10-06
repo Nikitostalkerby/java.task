@@ -10,7 +10,7 @@ public class Instruction {
 
 		while (first.getWater() != water && second.getWater() != water) {
 			if (first.getWater() == 0) {
-				first.setWater(first.getSpace());
+				first.addWater(first.getSpace());
 				System.out.println(first.getSpace() + " " + second.getSpace());
 
 				continue;
@@ -20,11 +20,12 @@ public class Instruction {
 				int maxAmount = second.getSpace() - second.getWater();
 				if (first.getWater() < second.getSpace()) {
 					maxAmount = first.getWater();
-					second.setWater((first.getWater() - second.getWater()));
-				} else
+					second.addWater((first.getWater() - second.getWater()));
+				} else {
 					second.setWater(second.getSpace() - second.getWater());
+				}
 
-				first.setWater(maxAmount);
+				first.pureWater(maxAmount);
 
 				System.out.println(first.getSpace() + " " + second.getSpace());
 
@@ -32,14 +33,14 @@ public class Instruction {
 			}
 
 			if (second.getWater() == second.getSpace()) {
-				second.setWater(second.getWater());
+				second.pureWater(second.getWater());
 				System.out.println(first.getSpace() + " " + second.getSpace());
 
 				continue;
 			}
 
 			if (second.getWater() == 0) {
-				second.setWater(second.getSpace());
+				second.addWater(second.getSpace());
 				System.out.println(first.getSpace() + " " + second.getSpace());
 			}
 		}
