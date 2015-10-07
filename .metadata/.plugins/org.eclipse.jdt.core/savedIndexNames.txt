@@ -1,6 +1,7 @@
 INDEX VERSION 1.127+D:\workspace\Java\java.task\.metadata\.plugins\org.eclipse.jdt.core
 844601494.index
 881895235.index
+608186408.index
 847618560.index
 3176364129.index
 3776425001.index

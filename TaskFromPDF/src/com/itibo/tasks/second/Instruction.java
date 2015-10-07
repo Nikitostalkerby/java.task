@@ -12,9 +12,7 @@ public class Instruction {
 			second.setSpace(var);
 		}
 		
-		GratestCommonDivisor ob = new GratestCommonDivisor();
-		
-		if(water % ob.gcd(first.getSpace(), second.getSpace()) == 0) {
+		if(water % GratestCommonDivisor.gcd(first.getSpace(), second.getSpace()) == 0) {
 			
 			while (first.getWater() != water && second.getWater() != water) {
 				if (first.getWater() == 0) {
