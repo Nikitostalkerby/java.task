@@ -1,5 +1,11 @@
 package com.itibo.tasks.second;
 
+/*
+ * Indian code of algorithm.
+ * This object also have checking block, that should be
+ * another class.
+ */
+
 public class Instruction {
 
 	public Instruction(Packet first, Packet second, int water) {

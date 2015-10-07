@@ -1,5 +1,10 @@
 package com.itibo.tasks.second;
 
+/*
+ * GratestCommonDivisor is for checking of opportunity pour the water.
+ * Static method return GCD.
+ */
+
 public class GratestCommonDivisor {
 
 	public GratestCommonDivisor() {
