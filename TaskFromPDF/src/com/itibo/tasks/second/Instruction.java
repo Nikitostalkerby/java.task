@@ -5,22 +5,22 @@ public class Instruction {
 	public Instruction(Packet first, Packet second, int water) {
 
 		System.out.println("Instruction begin. \n");
-		
-		if(second.getSpace() > first.getSpace()) {
+
+		if (second.getSpace() > first.getSpace()) {
 			int var = first.getSpace();
 			first.setSpace(second.getSpace());
 			second.setSpace(var);
 		}
-		
-		if(water % GratestCommonDivisor.gcd(first.getSpace(), second.getSpace()) == 0) {
-			
+
+		if (water % GratestCommonDivisor.gcd(first.getSpace(), second.getSpace()) == 0) {
+
 			while (first.getWater() != water && second.getWater() != water) {
 				if (first.getWater() == 0) {
 					first.addWater(first.getSpace());
-					
+
 					System.out.println(first.getWater() + " " + second.getWater());
 
-					continue; 
+					continue;
 				}
 
 				if (first.getWater() > 0 && second.getWater() != second.getSpace()) {
@@ -52,7 +52,7 @@ public class Instruction {
 				}
 			}
 		} else {
-			System.out.println("It impossible, sory.");
+			System.out.println("It impossible, sorry.");
 		}
 	}
 }

@@ -30,11 +30,11 @@ public class Packet {
 	public void setWater(int water) {
 		this.water = water;
 	}
-	
+
 	public void addWater(int val) {
 		this.water += val;
 	}
-	
+
 	public void deleteWater(int val) {
 		this.water -= val;
 	}
