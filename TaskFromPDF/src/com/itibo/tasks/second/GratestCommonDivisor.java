@@ -3,7 +3,7 @@ package com.itibo.tasks.second;
 public class GratestCommonDivisor {
 
 	public GratestCommonDivisor() {
-		System.out.println("Use static method plz.\n");
+		System.out.println("Cheking Block.\n");
 	}
 
 	public static int gcd(int firstSpace, int secondSpace) {

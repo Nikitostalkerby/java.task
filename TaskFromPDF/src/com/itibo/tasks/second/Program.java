@@ -13,7 +13,7 @@ public class Program {
 		
 		// System.out.println(GratestCommonDivisor.gcd(3, 5));
 		
-		Packet firstPacket = new Packet(3);
+		Packet firstPacket = new Packet(8);
 		Packet secondPacket = new Packet(5);
 		
 		Instruction ins = new Instruction(firstPacket, secondPacket, 4);
