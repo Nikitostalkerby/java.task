@@ -12,6 +12,7 @@ public class Packet {
 
 	public Packet(int space) {
 		this.space = space;
+		this.water = 0;
 	}
 
 	public int getSpace() {
@@ -34,7 +35,7 @@ public class Packet {
 		this.water += val;
 	}
 	
-	public void pureWater(int val) {
+	public void deleteWater(int val) {
 		this.water -= val;
 	}
 }
