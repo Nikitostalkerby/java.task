@@ -45,6 +45,7 @@ Desktop.ini
  
 *.pydevproject
 .metadata
+.recommenders
 .project
 bin/**
 tmp/**
