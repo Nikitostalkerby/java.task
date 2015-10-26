@@ -19,7 +19,7 @@ public class Program {
 	public static void main(String[] args) throws IOException {
 
 		try {
-			final String FILENAME = ".//text.txt";
+			final String FILENAME = ".//src/com/itibo/union/intro/first/text.txt";
 
 			StringBuilder text = new StringBuilder();
 			@SuppressWarnings("resource")
