@@ -1,4 +1,4 @@
-package com.itibo.tasks.second;
+package com.itibo.union.intro.second;
 
 /*
  * GratestCommonDivisor is for checking of opportunity pour the water.

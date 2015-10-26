@@ -1,4 +1,4 @@
-package com.itibo.tasks.second;
+package com.itibo.union.intro.second;
 
 import java.io.IOException;
 import java.util.Scanner;

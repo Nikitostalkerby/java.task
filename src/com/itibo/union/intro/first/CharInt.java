@@ -1,4 +1,4 @@
-package com.itibo.tasks.first;
+package com.itibo.union.intro.first;
 
 /*
  * ƒанный клас пришел на замену всовывани€ HashMap в TreeMap,

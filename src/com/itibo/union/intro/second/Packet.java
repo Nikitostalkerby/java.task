@@ -1,4 +1,4 @@
-package com.itibo.tasks.second;
+package com.itibo.union.intro.second;
 
 public class Packet {
 
