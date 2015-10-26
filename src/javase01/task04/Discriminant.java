@@ -12,12 +12,17 @@ public class Discriminant {
 		}
 
 		if (b.getObject().equals("b")) {
-			d = new Parameter<String>("b^2");
+			if (a.getObject().equals("a") && c.getObject().equals("c")) {
+				d = new Parameter<String>("b^2 - 4*a*c");
+			} else if (a.getObject().equals("a")) {
+				d = new Parameter<String>("b^2 - 4*a*" + c.getObject());
+			} else if (c.getObject().equals("c")) {
+				d = new Parameter<String>("b^2 - 4*c*" + a.getObject());
+			}
 		} else {
-			d = new Parameter<Integer>((Integer) b.getObject());
+			d = new Parameter<Integer>((Integer) b.getObject() * (Integer) b.getObject() - 4 * (Integer) a.getObject() * (Integer) c.getObject());
 		}
 
-		//System.out.println("D: " + d.getObject());
 		return d;
 	}
 }
