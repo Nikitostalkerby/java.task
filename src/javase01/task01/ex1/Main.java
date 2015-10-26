@@ -1,8 +1,8 @@
-package javase01.task01;
+package javase01.task01.ex1;
 
 import java.io.IOException;
 
-public class Program {
+public class Main {
 
 	public static void main(String[] args) {
 		
