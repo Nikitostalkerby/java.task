@@ -49,5 +49,6 @@ public class Main {
 		System.out.println("A: " + a.getObject());
 		System.out.println("B: " + b.getObject());
 		System.out.println("C: " + c.getObject());
+		System.out.println("D: " + Discriminant.find(a, b, c).getObject());
 	}
 }
