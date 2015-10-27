@@ -1,4 +1,4 @@
-package javase01.task04;
+package javase01.task04.logic;
 
 public class Parameter<T> {
 
@@ -12,7 +12,7 @@ public class Parameter<T> {
 		this.object = object;
 	}
 
-	Parameter(T object) {
+	public Parameter(T object) {
 		this.object = object;
 	}
 }

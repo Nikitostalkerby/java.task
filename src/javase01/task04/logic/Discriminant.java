@@ -1,8 +1,8 @@
-package javase01.task04;
+package javase01.task04.logic;
 
 public class Discriminant {
 
-	static Parameter<?> find(Parameter<?> a, Parameter<?> b, Parameter<?> c) {
+	public static Parameter<?> find(Parameter<?> a, Parameter<?> b, Parameter<?> c) {
 
 		Parameter<?> d = null;
 
@@ -16,14 +16,16 @@ public class Discriminant {
 			}
 		} else {
 			if (a.getObject().equals("a")) {
-				d = new Parameter<String>((Integer) b.getObject() * (Integer) b.getObject() + " - 4*a*" + c.getObject());
+				d = new Parameter<String>(
+						(Integer) b.getObject() * (Integer) b.getObject() + " - 4*a*" + c.getObject());
 			} else if (c.getObject().equals("c")) {
-				d = new Parameter<String>((Integer) b.getObject() * (Integer) b.getObject() + " - 4*c*" + a.getObject());
+				d = new Parameter<String>(
+						(Integer) b.getObject() * (Integer) b.getObject() + " - 4*c*" + a.getObject());
 			} else if (a.getObject().equals("a") && c.getObject().equals("c")) {
 				d = new Parameter<String>((Integer) b.getObject() * (Integer) b.getObject() + " - 4*c*a");
 			} else {
-				d = new Parameter<Integer>((Integer) b.getObject() * (Integer) b.getObject()
-						- 4 * (Integer) a.getObject() * (Integer) c.getObject());
+				d = new Parameter<Double>((double) ((Integer) b.getObject() * (Integer) b.getObject()
+						- 4 * (Integer) a.getObject() * (Integer) c.getObject()));
 			}
 		}
 

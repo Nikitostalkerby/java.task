@@ -1,8 +1,12 @@
-package javase01.task04;
+package javase01.task04.main;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+
+import javase01.task04.logic.Discriminant;
+import javase01.task04.logic.Parameter;
+import javase01.task04.logic.Result;
 
 public class Main {
 
@@ -50,5 +54,6 @@ public class Main {
 		System.out.println("B: " + b.getObject());
 		System.out.println("C: " + c.getObject());
 		System.out.println("D: " + Discriminant.find(a, b, c).getObject());
+		System.out.println(Result.find(Discriminant.find(a, b, c).getObject(), a, b));
 	}
 }
