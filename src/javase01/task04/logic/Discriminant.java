@@ -28,7 +28,7 @@ public class Discriminant {
 						- 4 * (Integer) a.getObject() * (Integer) c.getObject()));
 			}
 		}
-
+		
 		return d;
 	}
 }

@@ -10,7 +10,6 @@ import java.util.Date;
 
 public class Main {
 
-	@SuppressWarnings("deprecation")
 	public static void main(String[] args) throws ParseException, IOException {
 
 		DateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
@@ -18,18 +17,14 @@ public class Main {
 		System.out.println("Enter dare in the format dd.MM.yyyy");
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-		Date date = sdf.parse(br.readLine());
-
-		if (date.getMonth() + 10 > 12) {
-			date.setYear(date.getYear() + 9);
-		} else {
-			date.setYear(date.getYear() + 10);
-		}
-
-		date.setMonth(date.getMonth() + 10);
-
-		date.setDate(date.getDay() - 1);
-
-		System.out.println(date);
+		Date d1 = sdf.parse(br.readLine());
+		String str = "01.10.0010";
+		Date d2 = sdf.parse(str);
+		
+		long sum = d1.getTime() + d2.getTime();		
+		
+		Date sumDate = new Date(sum);
+		
+		System.out.println("Date: " + sumDate);
 	}
 }
