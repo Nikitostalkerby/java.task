@@ -18,7 +18,7 @@ public class Main {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
 		Date d1 = sdf.parse(br.readLine());
-		String str = "01.10.0010";
+		String str = "12.02.1980";
 		Date d2 = sdf.parse(str);
 		
 		long sum = d1.getTime() + d2.getTime();		
