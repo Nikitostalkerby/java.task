@@ -9,6 +9,10 @@ import javase01.task04.logic.Parameter;
 import javase01.task04.logic.Result;
 
 public class Main {
+	
+	public static int parse(String str) throws NumberFormatException{
+		return Integer.parseInt(str);
+	}
 
 	public static void main(String[] args) {
 
@@ -24,7 +28,7 @@ public class Main {
 
 			System.out.print("Enter a: ");
 			str = br.readLine();
-			if (str.contains("a")) {
+			if ("a".equals(str)) {
 				a =  new Parameter<String>("a");
 			} else {
 				a =  new Parameter<Integer>(Integer.parseInt(str));

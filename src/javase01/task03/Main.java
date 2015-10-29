@@ -23,8 +23,6 @@ public class Main {
 		
 		long sum = d1.getTime() + d2.getTime();		
 		
-		Date sumDate = new Date(sum);
-		
-		System.out.println("Date: " + sumDate);
+		System.out.println("Date: " + new Date(sum));
 	}
 }
