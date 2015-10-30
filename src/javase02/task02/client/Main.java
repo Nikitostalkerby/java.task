@@ -5,9 +5,11 @@ import java.util.List;
 
 import javase02.task02.array.Generator;
 import javase02.task02.writer.Writer;
+import javase02.task02.core.lib.CombSort;
 import javase02.task02.core.lib.GnomeSort;
 import javase02.task02.core.lib.InsertionSort;
 import javase02.task02.core.lib.ShakeSort;
+import javase02.task02.core.lib.ShellSort;
 import javase02.task02.core.timer.SorterTimer;
 
 public class Main {
@@ -21,7 +23,9 @@ public class Main {
 		Integer[] array1 = array.clone();
 		Integer[] array2 = array.clone();
 		Integer[] array3 = array.clone();
-
+		Integer[] array4 = array.clone();
+		Integer[] array5 = array.clone();
+		
 		System.out.println("Array: ");
 		w.writeArray(array);
 
@@ -47,5 +51,15 @@ public class Main {
 		long GnomeTime = SorterTimer.getTimer(array3, new GnomeSort());
 		w.writeArray(array3);
 		w.writeTime(GnomeTime);
+
+		System.out.println("Comb Sort: ");
+		long GombTime = SorterTimer.getTimer(array4, new CombSort());
+		w.writeArray(array4);
+		w.writeTime(GombTime);
+
+		System.out.println("Shell Sort: ");
+		long ShellTime = SorterTimer.getTimer(array5, new ShellSort());
+		w.writeArray(array5);
+		w.writeTime(ShellTime);
 	}
 }

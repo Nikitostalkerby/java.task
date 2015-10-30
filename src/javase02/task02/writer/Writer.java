@@ -35,6 +35,5 @@ public class Writer {
 		}
 
 		pw.println("<------------->");
-		
 	}
 }
