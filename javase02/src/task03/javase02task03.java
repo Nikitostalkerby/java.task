@@ -53,7 +53,7 @@ public class javase02task03 {
                     } else {
                         map.put(Integer.parseInt(i), DD);
                     }
-                    //map.put(Integer.parseInt(i), DDMM);
+                    map.put(Integer.parseInt(i), DDMM);
                 }else if (Integer.parseInt(i) >= 0 && Integer.parseInt(i) <= 31)  {
                     map.put(Integer.parseInt(i), DD);
                 }
@@ -68,15 +68,26 @@ public class javase02task03 {
             }
         }
 
-        List<String> commaList = Arrays.asList(datePattern.split(date));
-
+        String[] commaList = datePattern.split(date);
+        String comma = commaList[1].trim();
 
         System.out.println("\nYour date is: ");
         Arrays.asList(dateList).forEach(str -> System.out.println(str));
-        Arrays.asList(commaList).forEach(str -> System.out.println(str));
 
         for (Map.Entry<Integer, String> entry : map.entrySet()) {
             System.out.println(entry.getKey() + "<->" + entry.getValue());
         }
+
+        System.out.println("\nYour Comma is: " + comma);
+
+        String answer = null;
+
+        for(Map.Entry<Integer, String> entry : map.entrySet()) {
+            answer += entry.getValue() + comma;
+        }
+
+        answer = answer.substring(4, answer.length() - 1);
+
+        System.out.println("\nYour Answer is: " + answer);
     }
 }
