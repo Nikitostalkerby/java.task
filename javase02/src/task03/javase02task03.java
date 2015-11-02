@@ -14,70 +14,30 @@ public class javase02task03 {
 
     public static void main(String[] args) {
 
-        String date = null;
         final String COMMA_PATTERN = ":|;|;;|/|//|::|\\.|-";
         final String DATE_PATTERN = "[0-9]\\S";
-        final String MM = "mm";
-        final String DD = "dd";
-        final String YYYY = "yyyy";
-        final String DDMM = "ddmm";
 
+        String date = null;
 
+        // input the date
         System.out.println("Enter the date: ");
-
-        /*try(BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in))) {
-            date = bufferedReader.readLine();
-        } catch(IOException e) {
-            System.out.println("IOException: " + e.toString());
-        }
-
-        try{
-            date = date.replaceAll(" ", "");
-        } catch (NullPointerException e) {
-            System.out.println("NullPointerException: " + e.toString());
-        }*/
         date = input();
 
-
-        Pattern commaPattern = Pattern.compile(COMMA_PATTERN);
-        Pattern datePattern = Pattern.compile(DATE_PATTERN);
-
+        // set the patterns for separator and date
+        Pattern commaPattern = setPattern(COMMA_PATTERN);
+        Pattern datePattern = setPattern(DATE_PATTERN);
+        
         List<String> dateList = Arrays.asList(commaPattern.split(date));
         Map<Integer, String> map = new HashMap<>();
 
-        /*for(String i : dateList) {
-            map.put(Integer.parseInt(i), "");
-        }*/
-
+        // recording from array to map
         record(dateList, map);
 
-        /*for (Map.Entry<Integer, String> entry : map.entrySet()) {
-            if(entry.getKey().toString().length() >= 1 && entry.getKey().toString().length() <= 2) {
-                if(entry.getKey() > 0 && entry.getKey() <= 12) {
-                    if (map.containsKey(entry.getKey())) {
-                        entry.setValue(MM);
-                    } else {
-                        entry.setValue(DD);
-                    }
-                    entry.setValue(DDMM);
-                }else if (entry.getKey() > 0 && entry.getKey() <= 31)  {
-                    entry.setValue(DD);
-                }
-                else if(entry.getKey() < 0 && entry.getKey() > 31) {
-                    System.out.println("Incorrect format. Break this.");
-                    break;
-                }
-            } else if (entry.getKey().toString().length() == 4) {
-                if(entry.getKey() > 0) {
-                    entry.setValue(YYYY);
-                }
-            }
-        }*/
+        String[] separatorList = datePattern.split(date);
+        String separator = setSeparator(separatorList);
 
-        setValue(map);
-
-        String[] commaList = datePattern.split(date);
-        String comma = commaList[1].trim();
+        // set value in map
+        setValue(map, separator);
 
         System.out.println("\nYour date is: ");
         Arrays.asList(dateList).forEach(str -> System.out.println(str));
@@ -86,12 +46,12 @@ public class javase02task03 {
             System.out.println(entry.getKey() + "<->" + entry.getValue());
         }
 
-        System.out.println("\nYour Comma is: " + comma);
+        System.out.println("\nYour Comma is: " + separator);
 
         String answer = null;
 
         for(Map.Entry<Integer, String> entry : map.entrySet()) {
-            answer += entry.getValue() + comma;
+            answer += entry.getValue() + separator;
         }
 
         answer = answer.substring(4, answer.length() - 1);
@@ -116,21 +76,21 @@ public class javase02task03 {
         }
     }
 
-    public static void setValue(Map<Integer, String> map) {
+    public static void setValue(Map<Integer, String> map, String separator) {
         final String MM = "mm";
         final String DD = "dd";
         final String YYYY = "yyyy";
-        final String DDMM = "ddmm";
+        final String DD_MM = "dd" + separator + "mm";
 
         for (Map.Entry<Integer, String> entry : map.entrySet()) {
             if(entry.getKey().toString().length() >= 1 && entry.getKey().toString().length() <= 2) {
                 if(entry.getKey() > 0 && entry.getKey() <= 12) {
-                    if (map.containsKey(entry.getKey())) {
-                        entry.setValue(MM);
+                    if (map.containsKey(entry)) {
+                        entry.setValue(DD_MM);
                     } else {
-                        entry.setValue(DD);
+                        entry.setValue(DD+MM);
                     }
-                    entry.setValue(DDMM);
+                    //entry.setValue(DD+MM);
                 }else if (entry.getKey() > 0 && entry.getKey() <= 31)  {
                     entry.setValue(DD);
                 }
@@ -144,5 +104,14 @@ public class javase02task03 {
                 }
             }
         }
+    }
+    
+    public static Pattern setPattern(String PATTERN) {
+        Pattern pattern =Pattern.compile(PATTERN);
+        return pattern;
+    }
+    
+    public static String setSeparator(String[] separatorList) {
+        return separatorList[1].trim();
     }
 }
