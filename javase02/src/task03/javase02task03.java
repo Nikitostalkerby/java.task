@@ -1,5 +1,7 @@
 package task03;
 
+import com.sun.istack.internal.NotNull;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -16,7 +18,6 @@ public class javase02task03 {
 
         final String COMMA_PATTERN = ":|;|;;|/|//|::|\\.|-";
         final String DATE_PATTERN = "[0-9]\\S";
-
         String date = null;
 
         // input the date
@@ -26,17 +27,15 @@ public class javase02task03 {
         // set the patterns for separator and date
         Pattern commaPattern = setPattern(COMMA_PATTERN);
         Pattern datePattern = setPattern(DATE_PATTERN);
-        
-        List<String> dateList = Arrays.asList(commaPattern.split(date));
-        Map<Integer, String> map = new HashMap<>();
 
         // recording from array to map
+        List<String> dateList = Arrays.asList(commaPattern.split(date));
+        Map<Integer, String> map = new HashMap<>();
         record(dateList, map);
 
+        // set value in map
         String[] separatorList = datePattern.split(date);
         String separator = setSeparator(separatorList);
-
-        // set value in map
         setValue(map, separator);
 
         System.out.println("\nYour date is: ");
@@ -49,14 +48,13 @@ public class javase02task03 {
         System.out.println("\nYour Comma is: " + separator);
 
         String answer = null;
-
         for(Map.Entry<Integer, String> entry : map.entrySet()) {
             answer += entry.getValue() + separator;
         }
-
         answer = answer.substring(4, answer.length() - 1);
 
         System.out.println("\nYour Answer is: " + answer);
+        System.out.println("\nYour Answer is: " + map.size());
     }
 
     public static String input() {
@@ -82,19 +80,20 @@ public class javase02task03 {
         final String YYYY = "yyyy";
         final String DD_MM = "dd" + separator + "mm";
 
+        byte count = 0;
+
         for (Map.Entry<Integer, String> entry : map.entrySet()) {
             if(entry.getKey().toString().length() >= 1 && entry.getKey().toString().length() <= 2) {
-                if(entry.getKey() > 0 && entry.getKey() <= 12) {
-                    if (map.containsKey(entry)) {
-                        entry.setValue(DD_MM);
-                    } else {
-                        entry.setValue(DD+MM);
-                    }
-                    //entry.setValue(DD+MM);
-                }else if (entry.getKey() > 0 && entry.getKey() <= 31)  {
+                if(entry.getKey() > 0 && entry.getKey() <= 12 && map.size() == 2) {
+                    entry.setValue(DD_MM);
+                } else if (entry.getKey() > 0 && entry.getKey() <= 12 && map.size() == 3 && count == 0) {
+                    entry.setValue(MM);
+                    count++;
+                } else if (entry.getKey() > 0 && entry.getKey() <= 12 && map.size() == 3 && count != 0) {
                     entry.setValue(DD);
-                }
-                else if(entry.getKey() < 0 && entry.getKey() > 31) {
+                } else if (entry.getKey() > 0 && entry.getKey() <= 31)  {
+                    entry.setValue(DD);
+                } else if(entry.getKey() < 0 && entry.getKey() > 31) {
                     System.out.println("Incorrect format. Break this.");
                     break;
                 }
@@ -110,8 +109,13 @@ public class javase02task03 {
         Pattern pattern =Pattern.compile(PATTERN);
         return pattern;
     }
-    
-    public static String setSeparator(String[] separatorList) {
+
+    /**
+     * @param separatorList
+     * @return
+     */
+    @NotNull
+    private static String setSeparator(String[] separatorList) {
         return separatorList[1].trim();
     }
 }
