@@ -1,6 +1,5 @@
 package task04;
 
-
 import java.util.*;
 
 /**
@@ -9,6 +8,8 @@ import java.util.*;
 public class javase02task04 {
 
     public static void main(String[] args) {
+
+        final int DIM = 20;
 
         System.out.print("Enter the count of arrays: ");
         int n = 0;
@@ -24,17 +25,17 @@ public class javase02task04 {
 
         System.out.println("\nYou Entered: " + n);
 
-        Double[][] matrix = new Double[20][n];
+        Double[][] matrix = new Double[DIM][n];
 
         Random random = new Random();
 
-        for(int i = 0; i < 20; i++) {
+        for(int i = 0; i < DIM; i++) {
             for(int j = 0; j < n; j++) {
                 matrix[i][j] = random.nextDouble();
             }
         }
 
-        for(int i = 0; i < 20; i++) {
+        for(int i = 0; i < DIM; i++) {
             for(int j = 0; j < n; j++) {
                 if(j % n == 0 && j <= n) {
                     System.out.println();
@@ -48,7 +49,7 @@ public class javase02task04 {
 
         Map<Double, Integer> map = new HashMap<>();
 
-        for(int i = 0; i < 20; i++) {
+        for(int i = 0; i < DIM; i++) {
             for(int j = 0; j < n; j++) {
                 Double temp = matrix[i][j];
 
@@ -64,6 +65,19 @@ public class javase02task04 {
             if(entry.getValue() == 1) {
                 System.out.printf("%.10f", entry.getKey());
                 System.out.println(" <---> " + entry.getValue());
+            }
+        }
+
+        for (Map.Entry<Double, Integer> entry : map.entrySet()) {
+            if(entry.getValue() == n) {
+                for(int i = 0; i < DIM; i++) {
+                    for(int j = 0; j < n; j++) {
+                        if(matrix[j][i] == entry.getKey() && i < DIM) {
+                            System.out.printf("%.10f", entry.getKey());
+                            System.out.println(" <---> " + entry.getValue());
+                        }
+                    }
+                }
             }
         }
     }
