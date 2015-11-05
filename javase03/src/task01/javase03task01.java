@@ -6,14 +6,17 @@ package task01;
 public class javase03task01 {
 
     public static void main(String[] args) {
-        Array array = new Array();
-        Array array1 = new Array();
+        // initialize
         Generator generator = new Generator();
+        Array matrix = new Array();
+        Array neo = new Array();
 
-        array.setValue(generator);
-        array.writeArray();
+        // generate
+        matrix.setValue(generator);
+        neo.setValue(generator);
 
-        array1.setValue(generator);
-        array1.writeArray();
+        // write to console
+        matrix.writeArray();
+        neo.writeArray();
     }
 }

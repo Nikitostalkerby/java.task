@@ -15,7 +15,7 @@ public class Generator {
     }
 
     {
-        System.out.println();
+        System.out.println("marka_avto");
     }
 
     public void setBound(byte bound) {
