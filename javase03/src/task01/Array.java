@@ -1,8 +1,5 @@
 package task01;
 
-import java.util.Arrays;
-import java.util.List;
-
 /**
  * Created by Union.one on 05.11.2015.
  */
@@ -44,11 +41,9 @@ public class Array {
 
         for(int i = 0; i < this.width; i++) {
             for(int j = 0; j < this.height; j++) {
-                if(j % this.width == 0 && j <= this.width) {
-                    System.out.println();
-                }
                 System.out.printf("%5d", array[i][j]);
             }
+            System.out.println();
         }
     }
 
@@ -58,5 +53,9 @@ public class Array {
                 array[i][j] = generator.generate();
             }
         }
+    }
+
+    public int returnValue(int i, int j) {
+        return this.array[i][j];
     }
 }
