@@ -7,13 +7,15 @@ import java.util.Random;
  */
 public class Generator {
 
-    private final byte BOUND = 100;
-
-    private byte bound;
+    private int bound;
     private Random random;
 
-    public byte getBound() {
+    public int getBound() {
         return bound;
+    }
+
+    {
+        System.out.println();
     }
 
     public void setBound(byte bound) {
@@ -21,16 +23,16 @@ public class Generator {
     }
 
     public Generator() {
-        this.bound = BOUND;
-        this.random = new Random(this.bound);
+        this(100);
     }
 
-    public Generator(byte bound) {
+    public Generator(int bound) {
+        super();
         this.bound = bound;
-        this.random = new Random(this.bound);
+        this.random = new Random();
     }
 
     public int generate() {
-        return random.nextInt(this.bound);
+       return random.nextInt(bound);
     }
 }

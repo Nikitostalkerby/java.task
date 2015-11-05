@@ -5,42 +5,40 @@ package task01;
  */
 public class Array {
 
-    private  final byte WIDTH = 5;
-    private final byte HEIGHT = 5;
-
-    private byte width;
-    private byte height;
+    private int width;
+    private int height;
     private int[][] array;
 
-    public byte getWidth() {
+    public int getWidth() {
         return width;
     }
 
-    public void setWidth(byte width) {
+    public void setWidth(int width) {
         this.width = width;
     }
 
-    public byte getHeight() {
+    public int getHeight() {
         return height;
     }
 
-    public void setHeight(byte height) {
+    public void setHeight(int height) {
         this.height = height;
     }
 
     public Array() {
-        this.width = WIDTH;
-        this.height = HEIGHT;
-        array = new int [this.width][this.height];
+        this(5, 5);
     }
 
-    public Array(byte width, byte height) {
+    public Array(int width, int height) {
+        super();
         this.width = width;
         this.height = height;
         array = new int[this.width][this.height];
     }
 
     public void writeArray() {
+        System.out.println();
+
         for(int i = 0; i < this.width; i++) {
             for(int j = 0; j < this.height; j++) {
                 if(j % this.width == 0 && j <= this.width) {
