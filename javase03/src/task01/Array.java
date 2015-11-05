@@ -1,7 +1,5 @@
 package task01;
 
-import java.util.Random;
-
 /**
  * Created by Union.one on 05.11.2015.
  */
@@ -60,8 +58,4 @@ public class Array {
             }
         }
     }
-
-    /*public int[][] getArray() {
-        return this.array;
-    }*/
 }
