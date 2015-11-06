@@ -5,18 +5,18 @@ package task03;
  */
 public class Znak {
     public String name;
-    public String zodiak;
     public BDay bDay;
+    public Zodiac zodiac;
 
-    public Znak(String name, String zodiak, BDay bDay) {
+    public Znak(String name, Zodiac zodiac, BDay bDay) {
         super();
         this.name = name;
-        this.zodiak = zodiak;
+        this.zodiac = zodiac;
         this.bDay = bDay;
     }
 
     public Znak() {
-        this("Vladimir Lenin", "Telets", new BDay());
+        this("Vladimir Lenin", Zodiac.Taurus, new BDay());
     }
 
     public String getName() {
@@ -25,14 +25,6 @@ public class Znak {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getZodiak() {
-        return zodiak;
-    }
-
-    public void setZodiak(String zodiak) {
-        this.zodiak = zodiak;
     }
 
     public BDay getbDay() {
@@ -45,6 +37,7 @@ public class Znak {
 
     @Override
     public String toString() {
-        return new String("Name: " + this.name + "\nZodiak: " + this.zodiak + this.bDay.toString());
+        return new String("Name: " + this.name + "\nZodiak: " +
+                this.zodiac.name() + this.bDay.toString());
     }
 }
