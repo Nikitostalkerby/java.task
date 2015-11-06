@@ -1,7 +1,5 @@
 package task03;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.util.Scanner;
 
 /**
@@ -11,34 +9,66 @@ public class javase03task03 {
     public static void main(String[] args) {
         final int SIZE = 1;
 
-        //Znak znak = new Znak();
-        //System.out.println(znak.toString());
+        //Sign sign = new Sign();
+        //System.out.println(sign.toString());
 
-        Znak[] list = new Znak[SIZE];
+        Sign[] signs = new Sign[SIZE];
 
         /*for(int i = 0; i < SIZE; i++) {
-            list[i] = new Znak();
+            signs[i] = new Sign();
         }*/
 
+        Scanner scanner;
+
         for(int i = 0; i < SIZE; i++) {
-            list[i] = Znak.input();
+            String name = null;
+            String zodiacName = null;
+            Zodiac zodiac;
+            int day = 0;
+            int month = 0;
+            int year = 0;
+
+            try {
+                scanner = new Scanner(System.in);
+
+                System.out.print("\nEnter the name: ");
+                name = scanner.nextLine();
+
+                System.out.print("\nEnter the zodiac: ");
+                zodiacName = scanner.nextLine();
+
+                System.out.print("\nEnter the day: ");
+                day = scanner.nextInt();
+
+                System.out.print("\nEnter the month: ");
+                month = scanner.nextInt();
+
+                System.out.print("\nEnter the year: ");
+                year = scanner.nextInt();
+            } catch (Exception e) {
+                System.out.println("Exception: " + e.toString());
+            }
+            zodiac = Sign.validZodiac(zodiacName);
+            BDay bDay = new BDay(day, month, year);
+            signs[i] = new Sign(name, zodiac, bDay);
         }
 
-        for(Znak o : list) {
+        for(Sign o : signs) {
             System.out.println(o.toString());
         }
 
         // write by month
-        /*System.out.print("\nEnter the month: ");
+        System.out.print("\nEnter the month: ");
         int n = 0;
-        try (Scanner scanner = new Scanner(System.in)) {
+        try {
+            scanner = new Scanner(System.in);
             n = scanner.nextInt();
         } catch (Exception e) {
             System.out.println("Exception: " + e.toString());
-        }*/
+        }
 
-        for(Znak o : list) {
-            o.writeByMonth(Znak.find());
+        for(Sign o : signs) {
+            o.writeByMonth(n);
         }
     }
 }
