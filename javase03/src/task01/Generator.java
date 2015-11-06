@@ -33,6 +33,6 @@ public class Generator {
     }
 
     public int generate() {
-       return random.nextInt(bound);
+        return random.nextInt(bound);
     }
 }

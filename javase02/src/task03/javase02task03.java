@@ -5,8 +5,10 @@ import com.sun.istack.internal.NotNull;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.*;
-
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.regex.Pattern;
 
 /**
@@ -48,7 +50,7 @@ public class javase02task03 {
         System.out.println("\nYour Comma is: " + separator);
 
         String answer = null;
-        for(Map.Entry<Integer, String> entry : map.entrySet()) {
+        for (Map.Entry<Integer, String> entry : map.entrySet()) {
             answer += entry.getValue() + separator;
         }
         answer = answer.substring(4, answer.length() - 1);
@@ -60,16 +62,16 @@ public class javase02task03 {
     public static String input() {
         String date = null;
 
-        try(BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in))) {
+        try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in))) {
             date = bufferedReader.readLine();
-        } catch(IOException e) {
+        } catch (IOException e) {
             System.out.println("IOException: " + e.toString());
         }
         return date.replaceAll(" ", "");
     }
 
     public static void record(List<String> dateList, Map<Integer, String> map) {
-        for(String i : dateList) {
+        for (String i : dateList) {
             map.put(Integer.parseInt(i), "");
         }
     }
@@ -83,30 +85,30 @@ public class javase02task03 {
         byte count = 0;
 
         for (Map.Entry<Integer, String> entry : map.entrySet()) {
-            if(entry.getKey().toString().length() >= 1 && entry.getKey().toString().length() <= 2) {
-                if(entry.getKey() > 0 && entry.getKey() <= 12 && map.size() == 2) {
+            if (entry.getKey().toString().length() >= 1 && entry.getKey().toString().length() <= 2) {
+                if (entry.getKey() > 0 && entry.getKey() <= 12 && map.size() == 2) {
                     entry.setValue(DD_MM);
                 } else if (entry.getKey() > 0 && entry.getKey() <= 12 && map.size() == 3 && count == 0) {
                     entry.setValue(MM);
                     count++;
                 } else if (entry.getKey() > 0 && entry.getKey() <= 12 && map.size() == 3 && count != 0) {
                     entry.setValue(DD);
-                } else if (entry.getKey() > 0 && entry.getKey() <= 31)  {
+                } else if (entry.getKey() > 0 && entry.getKey() <= 31) {
                     entry.setValue(DD);
-                } else if(entry.getKey() < 0 && entry.getKey() > 31) {
+                } else if (entry.getKey() < 0 && entry.getKey() > 31) {
                     System.out.println("Incorrect format. Break this.");
                     break;
                 }
             } else if (entry.getKey().toString().length() == 4) {
-                if(entry.getKey() > 0) {
+                if (entry.getKey() > 0) {
                     entry.setValue(YYYY);
                 }
             }
         }
     }
-    
+
     public static Pattern setPattern(String PATTERN) {
-        Pattern pattern =Pattern.compile(PATTERN);
+        Pattern pattern = Pattern.compile(PATTERN);
         return pattern;
     }
 

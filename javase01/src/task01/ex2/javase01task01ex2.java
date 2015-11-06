@@ -6,17 +6,17 @@ import java.io.InputStreamReader;
 
 public class javase01task01ex2 {
 
-	public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException {
 
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-		char c;
+        char c;
 
-		System.out.println("Enter characters, 'q' to quit.");
+        System.out.println("Enter characters, 'q' to quit.");
 
-		do {
-			c = (char) br.read();
-			System.out.print(c);
-		} while (c != 'z');
-	}
+        do {
+            c = (char) br.read();
+            System.out.print(c);
+        } while (c != 'z');
+    }
 }

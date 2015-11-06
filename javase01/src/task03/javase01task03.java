@@ -10,19 +10,19 @@ import java.util.Date;
 
 public class javase01task03 {
 
-	public static void main(String[] args) throws ParseException, IOException {
+    public static void main(String[] args) throws ParseException, IOException {
 
-		DateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
+        DateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
 
-		System.out.println("Enter dare in the format dd.MM.yyyy");
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Enter dare in the format dd.MM.yyyy");
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-		Date d1 = sdf.parse(br.readLine());
-		String str = "12.02.1980";
-		Date d2 = sdf.parse(str);
-		
-		long sum = d1.getTime() + d2.getTime();		
-		
-		System.out.println("Date: " + new Date(sum));
-	}
+        Date d1 = sdf.parse(br.readLine());
+        String str = "12.02.1980";
+        Date d2 = sdf.parse(str);
+
+        long sum = d1.getTime() + d2.getTime();
+
+        System.out.println("Date: " + new Date(sum));
+    }
 }

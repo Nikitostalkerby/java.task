@@ -5,10 +5,10 @@ import java.util.Scanner;
 
 public class javase00task02 {
 
-	public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException {
 
 		/*
-		 * This is cap
+         * This is cap
 		 */
 
 		/*
@@ -22,25 +22,25 @@ public class javase00task02 {
 		 * Block of real code
 		 */
 
-		@SuppressWarnings("resource")
-		Scanner sc = new Scanner(System.in);
-		int water;
+        @SuppressWarnings("resource")
+        Scanner sc = new Scanner(System.in);
+        int water;
 
-		Packet firstPacket = new Packet();
-		Packet secondPacket = new Packet();
+        Packet firstPacket = new Packet();
+        Packet secondPacket = new Packet();
 
-		System.out.println("Enter the space of packet.");
+        System.out.println("Enter the space of packet.");
 
-		System.out.print("First packet: ");
-		firstPacket.setSpace(sc.nextInt());
+        System.out.print("First packet: ");
+        firstPacket.setSpace(sc.nextInt());
 
-		System.out.print("Second packet: ");
-		secondPacket.setSpace(sc.nextInt());
+        System.out.print("Second packet: ");
+        secondPacket.setSpace(sc.nextInt());
 
-		System.out.print("Enter the volume of water: ");
-		water = sc.nextInt();
+        System.out.print("Enter the volume of water: ");
+        water = sc.nextInt();
 
-		@SuppressWarnings("unused")
-		Instruction instruction = new Instruction(firstPacket, secondPacket, water);
-	}
+        @SuppressWarnings("unused")
+        Instruction instruction = new Instruction(firstPacket, secondPacket, water);
+    }
 }

@@ -5,35 +5,35 @@ import java.util.List;
 
 public class Writer {
 
-	public static <T> void writeArray(T[] array) {
-		PrintWriter pw = new PrintWriter(System.out, true);
+    public static <T> void writeArray(T[] array) {
+        PrintWriter pw = new PrintWriter(System.out, true);
 
-		pw.println("<------------->");
+        pw.println("<------------->");
 
-		for (T a : array) {
-			pw.println(a);
-		}
+        for (T a : array) {
+            pw.println(a);
+        }
 
-		pw.println("<------------->");
-	}
+        pw.println("<------------->");
+    }
 
-	public static void writeTime(long time) {
-		PrintWriter pw = new PrintWriter(System.out, true);
+    public static void writeTime(long time) {
+        PrintWriter pw = new PrintWriter(System.out, true);
 
-		pw.println("Time: " + time);
-		pw.println("<------------->");
-	}
+        pw.println("Time: " + time);
+        pw.println("<------------->");
+    }
 
-	public void writeArray(List<Integer> list) {
+    public void writeArray(List<Integer> list) {
 
-		PrintWriter pw = new PrintWriter(System.out, true);
+        PrintWriter pw = new PrintWriter(System.out, true);
 
-		pw.println("<------------->");
+        pw.println("<------------->");
 
-		for (Integer element  : list) {
-			pw.println(element);
-		}
+        for (Integer element : list) {
+            pw.println(element);
+        }
 
-		pw.println("<------------->");
-	}
+        pw.println("<------------->");
+    }
 }

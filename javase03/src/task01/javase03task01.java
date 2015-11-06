@@ -21,7 +21,7 @@ public class javase03task01 {
         neo.writeArray();
 
         // addition
-        if(matrix.getHeight() == neo.getHeight() && matrix.getWidth() == neo.getWidth()) {
+        if (matrix.getHeight() == neo.getHeight() && matrix.getWidth() == neo.getWidth()) {
             operations.addition(matrix, neo);
         }
 

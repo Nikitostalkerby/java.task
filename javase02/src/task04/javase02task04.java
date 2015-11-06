@@ -14,7 +14,7 @@ public class javase02task04 {
         System.out.print("Enter the count of arrays: ");
         int n = 0;
 
-        try(Scanner scanner = new Scanner(System.in)) {
+        try (Scanner scanner = new Scanner(System.in)) {
             n = scanner.nextInt();
         } catch (InputMismatchException e) {
             System.out.println("InputMismatchException: " + e.toString());
@@ -29,15 +29,15 @@ public class javase02task04 {
 
         Random random = new Random();
 
-        for(int i = 0; i < DIM; i++) {
-            for(int j = 0; j < n; j++) {
+        for (int i = 0; i < DIM; i++) {
+            for (int j = 0; j < n; j++) {
                 matrix[i][j] = random.nextDouble();
             }
         }
 
-        for(int i = 0; i < DIM; i++) {
-            for(int j = 0; j < n; j++) {
-                if(j % n == 0 && j <= n) {
+        for (int i = 0; i < DIM; i++) {
+            for (int j = 0; j < n; j++) {
+                if (j % n == 0 && j <= n) {
                     System.out.println();
                 }
                 System.out.printf("%10f", matrix[i][j]);
@@ -49,8 +49,8 @@ public class javase02task04 {
 
         Map<Double, Integer> map = new HashMap<>();
 
-        for(int i = 0; i < DIM; i++) {
-            for(int j = 0; j < n; j++) {
+        for (int i = 0; i < DIM; i++) {
+            for (int j = 0; j < n; j++) {
                 Double temp = matrix[i][j];
 
                 if (!map.containsKey(temp)) {
@@ -62,17 +62,17 @@ public class javase02task04 {
         }
 
         for (Map.Entry<Double, Integer> entry : map.entrySet()) {
-            if(entry.getValue() == 1) {
+            if (entry.getValue() == 1) {
                 System.out.printf("%.10f", entry.getKey());
                 System.out.println(" <---> " + entry.getValue());
             }
         }
 
         for (Map.Entry<Double, Integer> entry : map.entrySet()) {
-            if(entry.getValue() == n) {
-                for(int i = 0; i < DIM; i++) {
-                    for(int j = 0; j < n; j++) {
-                        if(matrix[j][i] == entry.getKey() && i < DIM) {
+            if (entry.getValue() == n) {
+                for (int i = 0; i < DIM; i++) {
+                    for (int j = 0; j < n; j++) {
+                        if (matrix[j][i] == entry.getKey() && i < DIM) {
                             System.out.printf("%.10f", entry.getKey());
                             System.out.println(" <---> " + entry.getValue());
                         }
