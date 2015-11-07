@@ -27,7 +27,6 @@ public class Generator {
     }
 
     public Generator(int bound) {
-        super();
         this.bound = bound;
         this.random = new Random();
     }

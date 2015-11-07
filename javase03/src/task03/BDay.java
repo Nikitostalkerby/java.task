@@ -45,6 +45,10 @@ public class BDay {
 
     @Override
     public String toString() {
-        return new String("\nDay: " + this.day + "\nMonth: " + this.month + "\nYear: " + this.year);
+        return "BDay{" +
+                "day=" + day +
+                ", month=" + month +
+                ", year=" + year +
+                '}';
     }
 }

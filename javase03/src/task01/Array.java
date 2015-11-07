@@ -30,7 +30,6 @@ public class Array {
     }
 
     public Array(int width, int height) {
-        super();
         this.width = width;
         this.height = height;
         array = new int[this.width][this.height];
@@ -47,7 +46,7 @@ public class Array {
         }
     }
 
-    public void setValue(Generator generator) {
+    public void buildMatrix(Generator generator) {
         for(int i = 0; i < this.width; i++) {
             for(int j = 0; j < this.height; j++) {
                 array[i][j] = generator.generate();

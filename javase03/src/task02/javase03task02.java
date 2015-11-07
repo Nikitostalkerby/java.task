@@ -1,5 +1,7 @@
 package task02;
 
+import java.io.IOException;
+
 /**
  * Created by Vaas on 06.11.2015.
  */
@@ -10,8 +12,8 @@ public class javase03task02 {
         Kit kit = new Kit();
 
         // set value index 0 and 1
-        kit.setValue(0);
-        kit.setValue(1);
+        kit.init(0);
+        kit.init(1);
 
         // print all and 0
         kit.print();
@@ -21,9 +23,9 @@ public class javase03task02 {
         System.out.print("\n\nAdding: ");
         kit.add(0, 1);
 
-        // union and return string
+        // concat and return string
         System.out.print("\nUnion: ");
-        System.out.println(kit.union(0, 1));
+        System.out.println(kit.concat(0, 1));
 
         // find Bxo)|(DeHie
         System.out.println("\nIndex of string: " + kit.find("123"));

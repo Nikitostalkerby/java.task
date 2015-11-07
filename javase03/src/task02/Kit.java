@@ -56,17 +56,16 @@ public class Kit {
         this(5, 5);
     }
 
-    public void setValue(int index) {
+    public void init(int index) {
         System.out.println();
         System.out.print("Enter the line: ");
 
-        BufferedReader bufferedReader;
+        BufferedReader bufferedReader = null;
         try {
             bufferedReader = new BufferedReader((new InputStreamReader(System.in)));
             kit[index] = bufferedReader.readLine();
         } catch (IOException e) {
             System.out.println("IOException for setValue: " + e.toString());
-        } finally {
         }
     }
 
@@ -91,8 +90,8 @@ public class Kit {
         System.out.println(kit[index1] + kit[index2]);
     }
 
-    public String union(int index1, int index2) {
-        return new String(kit[index1] + kit[index2]);
+    public String concat(int index1, int index2) {
+        return kit[index1] + kit[index2];
     }
 
     public int find(String str) {

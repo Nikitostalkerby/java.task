@@ -7,7 +7,7 @@ import java.util.Scanner;
  */
 public class javase03task03 {
     public static void main(String[] args) {
-        final int SIZE = 1;
+        final int SIZE = 2;
 
         //Sign sign = new Sign();
         //System.out.println(sign.toString());
@@ -20,7 +20,7 @@ public class javase03task03 {
 
         Scanner scanner;
 
-        for(int i = 0; i < SIZE; i++) {
+        for (int i = 0; i < SIZE; i++) {
             String name = null;
             String zodiacName = null;
             Zodiac zodiac;
@@ -48,12 +48,15 @@ public class javase03task03 {
             } catch (Exception e) {
                 System.out.println("Exception: " + e.toString());
             }
-            zodiac = Sign.validZodiac(zodiacName);
-            BDay bDay = new BDay(day, month, year);
-            signs[i] = new Sign(name, zodiac, bDay);
+            if(Sign.isValidZodiac(zodiacName)) {
+                BDay bDay = new BDay(day, month, year);
+                signs[i] = new Sign(name, Sign.getZodiac(zodiacName), bDay);
+            } else {
+                System.out.println("Invalid Zodiac name: " + zodiacName);
+            }
         }
 
-        for(Sign o : signs) {
+        for (Sign o : signs) {
             System.out.println(o.toString());
         }
 
@@ -67,7 +70,7 @@ public class javase03task03 {
             System.out.println("Exception: " + e.toString());
         }
 
-        for(Sign o : signs) {
+        for (Sign o : signs) {
             o.writeByMonth(n);
         }
     }

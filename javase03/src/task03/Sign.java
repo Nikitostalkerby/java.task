@@ -39,8 +39,11 @@ public class Sign {
 
     @Override
     public String toString() {
-        return new String("\nName: " + this.name + "\nZodiak: " +
-                this.zodiac.name() + this.bDay.toString());
+        return "Sign{" +
+                "name='" + name + '\'' +
+                ", bDay=" + bDay +
+                ", zodiac=" + zodiac +
+                '}';
     }
 
     public void writeByMonth(int month) {
@@ -49,17 +52,17 @@ public class Sign {
         }
     }
 
+    //TODO implement sort method
     public void sort(Sign[] elements) {
-
+        // code...
     }
 
-    public static Zodiac validZodiac (String str) {
-        for (Zodiac zodiac: Zodiac.values()) {
-            if(str.equals(zodiac.name())) {
-                return zodiac;
-            }
-        }
-        return Zodiac.Taurus;
+    public static Zodiac getZodiac(String str) {
+        return Zodiac.findZodiac(str);
+    }
+
+    public static boolean isValidZodiac(String str) {
+        return Zodiac.findZodiac(str) != null;
     }
 }
 

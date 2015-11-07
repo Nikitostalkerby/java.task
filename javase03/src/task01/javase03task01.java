@@ -8,24 +8,25 @@ public class javase03task01 {
     public static void main(String[] args) {
         // initialize
         Generator generator = new Generator();
-        Array matrix = new Array();
-        Array neo = new Array();
+        Array firstMatrix = new Array();
+        Array secondMatrix = new Array();
         Operations<Array> operations = new MatrixOperator();
 
         // generate
-        matrix.setValue(generator);
-        neo.setValue(generator);
+        firstMatrix.buildMatrix(generator);
+        secondMatrix.buildMatrix(generator);
 
         // write to console
-        matrix.writeArray();
-        neo.writeArray();
+        firstMatrix.writeArray();
+        secondMatrix.writeArray();
 
         // addition
-        if (matrix.getHeight() == neo.getHeight() && matrix.getWidth() == neo.getWidth()) {
-            operations.addition(matrix, neo);
+        if (firstMatrix.getHeight() == secondMatrix.getHeight() &&
+                firstMatrix.getWidth() == secondMatrix.getWidth()) {
+            operations.addition(firstMatrix, secondMatrix);
         }
 
         // multiply
-        operations.multiply(matrix, neo);
+        operations.multiply(firstMatrix, secondMatrix);
     }
 }
