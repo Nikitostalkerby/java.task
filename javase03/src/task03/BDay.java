@@ -9,7 +9,7 @@ public class BDay {
     private int year;
 
     public BDay() {
-        this(22, 04, 1870);
+        this(22, 4, 1870);
     }
 
     public BDay(int day, int month, int year) {
