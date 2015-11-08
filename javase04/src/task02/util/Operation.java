@@ -10,7 +10,6 @@ import java.util.List;
  */
 public class Operation implements Operable {
 
-    @Override
     public String inputString() {
         System.out.print("Enter the digits: ");
         try (BufferedReader bufferedReader = new BufferedReader((new InputStreamReader(System.in)))) {
@@ -22,7 +21,6 @@ public class Operation implements Operable {
         return null;
     }
 
-    @Override
     public void writeStringArray(String[] array) {
         System.out.print("\nThe digits: ");
         for (String element : array) {
@@ -30,14 +28,12 @@ public class Operation implements Operable {
         }
     }
 
-    @Override
     public void addToListFromStringArray(List<Integer> list, String[] array) {
         for (String element : array) {
             list.add(Integer.parseInt(element));
         }
     }
 
-    @Override
     public void writeIntegerList(List<Integer> list) {
         System.out.print("\nThe digits: ");
         for (Integer element : list) {

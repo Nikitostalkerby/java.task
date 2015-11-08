@@ -1,6 +1,5 @@
 package task02.client;
 
-import task02.util.Operable;
 import task02.util.Operation;
 
 import java.util.ArrayList;
@@ -13,15 +12,15 @@ public class javase04task02 {
     public static void main(String[] args) {
 
         // util
-        Operable operation = new Operation();
+        Operation operation = new Operation();
 
         // input string and trim
-        String inputString = null;
+        String inputString;
         inputString = operation.inputString();
         inputString = inputString != null ? inputString.trim() : null;
 
         // split inputString and add to array
-        String[] digits = inputString.split(",");
+        String[] digits = inputString != null ? inputString.split(",") : new String[0];
         operation.writeStringArray(digits);
 
         // parse String array and add elements to list
