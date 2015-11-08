@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/javase01/javase01.iml" filepath="$PROJECT_DIR$/javase01/javase01.iml" />
       <module fileurl="file://$PROJECT_DIR$/javase02/javase02.iml" filepath="$PROJECT_DIR$/javase02/javase02.iml" />
       <module fileurl="file://$PROJECT_DIR$/javase03/javase03.iml" filepath="$PROJECT_DIR$/javase03/javase03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javase04/javase04.iml" filepath="$PROJECT_DIR$/javase04/javase04.iml" />
     </modules>
   </component>
 </project>
