@@ -1,7 +1,8 @@
 package task02.client;
 
-import task02.util.Operatable;
+import task02.util.Operable;
 import task02.util.Operation;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +13,7 @@ public class javase04task02 {
     public static void main(String[] args) {
 
         // util
-        Operatable operation = new Operation();
+        Operable operation = new Operation();
 
         // input string and trim
         String inputString = null;

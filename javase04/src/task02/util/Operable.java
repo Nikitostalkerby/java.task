@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * Created by Vaas on 08.11.2015.
  */
-public interface Operatable {
+public interface Operable {
 
     String inputString();
 
