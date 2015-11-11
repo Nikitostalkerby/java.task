@@ -18,34 +18,22 @@ public class javase04task03 {
 
             System.out.print("\nEnter the divider: ");
             divider = scanner.nextInt();
+
+            //divider = -divider;
+
+            int quotient = 0;
+            while (dividend >= divider) {
+                dividend -= divider;
+                quotient++;
+            }
+
+            System.out.print("\nQuotient: " + quotient);
+            System.out.print("\n\nRemainder: " + dividend);
+
         } catch (NoSuchElementException e) {
             System.out.println("NoSuchElementException: " + e.toString());
         } catch (Exception e) {
             System.out.println("Exception: " + e.toString());
         }
-
-        if (isLess(dividend, divider)) {
-            findNumbers(dividend, divider);
-        } else {
-            System.out.println("Davai po novoi Miwa.");
-        }
-    }
-
-    public static boolean isLess(int dividend, int divider) {
-        return divider <= dividend;
-    }
-
-    public static void findNumbers(int dividend, int divider) {
-        int quotient = 0;
-        int remainder;
-
-        do {
-            remainder = dividend - divider;
-            dividend = remainder;
-            quotient++;
-        } while (dividend >= divider);
-
-        System.out.print("\nQuotient: " + quotient);
-        System.out.print("\n\nRemainder: " + remainder);
     }
 }

@@ -15,14 +15,14 @@ public class javase04task01 {
 
         input(firstCell, secondCell);
 
-        if (Check.isGo(firstCell, secondCell)) {
+        if (Validator.check(firstCell, secondCell)) {
             System.out.println("\nYES");
         } else {
             System.out.println("\nNO");
         }
     }
 
-    // куда вот такое выносить
+    // reader
     public static void input(Cell firstCell, Cell secondCell) {
         try (Scanner scanner = new Scanner(System.in)) {
             System.out.println("\nEnter first cell: ");
