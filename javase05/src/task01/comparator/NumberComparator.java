@@ -1,4 +1,6 @@
-package task01;
+package task01.comparator;
+
+import task01.core.Person;
 
 import java.util.Comparator;
 

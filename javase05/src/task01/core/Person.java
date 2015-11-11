@@ -1,4 +1,4 @@
-package task01;
+package task01.core;
 
 import java.io.Serializable;
 
