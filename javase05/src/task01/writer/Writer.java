@@ -47,6 +47,7 @@ public class Writer {
     }
 
     public void writeToConsole() {
+        System.out.println("===== write =====");
         for (int i = 0; i < persons.length; i++) {
             System.out.println(persons[i].toString());
         }
