@@ -62,7 +62,7 @@ public class Inputer {
             } while (timer.getSecond() < 0 || timer.getSecond() > 60);
 
             Transformer transformer = new Transformer();
-            int time1 =  transformer.transformTimeToSeconds(timer);
+            int time1 = transformer.transformTimeToSeconds(timer);
 
             System.out.println("\nEnter the first moment of time: ");
             System.out.println("Enter the values of time: ");
@@ -80,10 +80,10 @@ public class Inputer {
                 System.out.print("\n>>seconds: ");
                 timer.setSecond(scanner.nextInt());
             } while (timer.getSecond() < 0 || timer.getSecond() > 60);
-            int time2 =  transformer.transformTimeToSeconds(timer);
+            int time2 = transformer.transformTimeToSeconds(timer);
 
             // как поменять
-            if(time1 > time2) {
+            if (time1 > time2) {
                 int var = time2;
                 time2 = time1;
                 time1 = var;
