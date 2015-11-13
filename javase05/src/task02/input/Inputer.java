@@ -43,6 +43,23 @@ public class Inputer {
             Deducter deducter = new Deducter(timer, seconds);
             deducter.deduct();
 
+            System.out.println("\nEnter the first moment of time: ");
+            System.out.println("Enter the values of time: ");
+            do {
+                System.out.print("\n>>hours: ");
+                timer.setHour(scanner.nextInt());
+            } while (timer.getHour() < 0 || timer.getHour() > 24);
+
+            do {
+                System.out.print("\n>>minutes: ");
+                timer.setMinute(scanner.nextInt());
+            } while (timer.getMinute() < 0 || timer.getMinute() > 60);
+
+            do {
+                System.out.print("\n>>seconds: ");
+                timer.setSecond(scanner.nextInt());
+            } while (timer.getSecond() < 0 || timer.getSecond() > 60);
+
         } catch (Exception e) {
             System.out.print("Exception: " + e.toString());
         }
