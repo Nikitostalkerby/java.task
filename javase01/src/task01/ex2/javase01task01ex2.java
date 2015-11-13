@@ -12,7 +12,7 @@ public class javase01task01ex2 {
 
         char c;
 
-        System.out.println("Enter characters, 'q' to quit.");
+        System.out.println("Enter characters, 'z' to quit.");
 
         do {
             c = (char) br.read();
