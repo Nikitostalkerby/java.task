@@ -13,7 +13,7 @@ import java.io.IOException;
  */
 public class javase05task01 {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-        final String path = "D:\\workspace\\Java\\java.task\\javase05\\src\\task01\\info.txt";
+        final String path = "info.txt";
 
         Person[] persons = new Person[5];
 
@@ -26,7 +26,7 @@ public class javase05task01 {
         writer.writeToFile();
 
         // read from the file
-        Reader reader = new Reader(persons, path);
+        Reader reader = new Reader(path).readFromFile();
         reader.readFromFile();
 
         // output to console

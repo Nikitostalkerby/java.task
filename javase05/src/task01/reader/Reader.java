@@ -6,24 +6,26 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by Vaas on 11.11.2015.
  */
 public class Reader {
-    private Person[] persons;
+    //list. not array
+    private List<Person> persons;
     private String path;
 
-    public Reader(Person[] persons, String path) {
+    public Reader(List<Person> persons, String path) {
         this.persons = persons;
         this.path = path;
     }
 
-    public Person[] getPersons() {
+    public List<Person> getPersons() {
         return persons;
     }
 
-    public void setPersons(Person[] persons) {
+    public void setPersons(List<Person> persons) {
         this.persons = persons;
     }
 
@@ -35,6 +37,7 @@ public class Reader {
         this.path = path;
     }
 
+    //return, not void
     public void readFromFile() throws IOException, ClassNotFoundException {
         try (ObjectInputStream objectInputStream = new
                 ObjectInputStream((new FileInputStream(path)))) {

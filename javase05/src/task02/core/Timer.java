@@ -14,8 +14,9 @@ public class Timer {
         this.second = second;
     }
 
+    //хорошо
     public Timer() {
-        this(4, 32, 47);
+
     }
 
     public int getHour() {

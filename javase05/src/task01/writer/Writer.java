@@ -9,7 +9,10 @@ import java.io.ObjectOutputStream;
 /**
  * Created by Vaas on 11.11.2015.
  */
+
+// package io reader and writer
 public class Writer {
+    //вот это плохо
     private Person[] persons;
     private String path;
 
@@ -34,6 +37,7 @@ public class Writer {
         this.persons = persons;
     }
 
+    // принимает лист
     public void writeToFile() throws IOException {
         try (ObjectOutputStream objectOutputStream = new
                 ObjectOutputStream(new FileOutputStream(this.path))) {

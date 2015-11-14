@@ -6,6 +6,7 @@ import java.io.Serializable;
  * Created by Vaas on 11.11.2015.
  */
 public class Person implements Serializable {
+    //number - string
     private int number;
     private String name;
     private String address;
@@ -16,6 +17,7 @@ public class Person implements Serializable {
         this.address = address;
     }
 
+    // empty
     public Person() {
         this(112233, "Vladimir Lenin", "Red Square 1 coffin");
     }
@@ -52,26 +54,5 @@ public class Person implements Serializable {
                 ", name='" + name + '\'' +
                 ", address='" + address + '\'' +
                 '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Person person = (Person) o;
-
-        if (number != person.number) return false;
-        if (name != null ? !name.equals(person.name) : person.name != null) return false;
-        return !(address != null ? !address.equals(person.address) : person.address != null);
-
-    }
-
-    @Override
-    public int hashCode() {
-        int result = number;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (address != null ? address.hashCode() : 0);
-        return result;
     }
 }
