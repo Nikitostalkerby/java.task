@@ -14,6 +14,10 @@ public class Timer {
         this.second = second;
     }
 
+    public Timer() {
+
+    }
+
     public int getHour() {
         return hour;
     }
