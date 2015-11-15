@@ -1,4 +1,4 @@
-package task01.comparator;
+package task01.sort;
 
 import task01.core.Person;
 
@@ -10,9 +10,6 @@ import java.util.Comparator;
 public class NumberComparator implements Comparator<Person> {
     @Override
     public int compare(Person person1, Person person2) {
-        Integer number1 = person1.getNumber();
-        Integer number2 = person2.getNumber();
-
-        return number1.compareTo(number2);
+        return person1.getNumber().compareTo(person2.getNumber());
     }
 }

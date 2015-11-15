@@ -1,12 +1,13 @@
 package task01.client;
 
 import task01.core.Person;
-import task01.init.DefaultInitializer;
-import task01.reader.Reader;
+import task01.io.Reader;
+import task01.io.Writer;
 import task01.sort.Sorter;
-import task01.writer.Writer;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Vaas on 11.11.2015.
@@ -15,28 +16,28 @@ public class javase05task01 {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         final String path = "info.txt";
 
-        Person[] persons = new Person[5];
+        List<Person> persons = new ArrayList<>();
 
-        // default initilize
-        DefaultInitializer defaultInitializer = new DefaultInitializer(persons);
-        defaultInitializer.initialize();
+        persons.add(new Person("112233", "Vladimir Lenin", "Red Square 1 coffin"));
+        persons.add(new Person("113322", "Joseph Stalin", "Red Square 2 coffin"));
+        persons.add(new Person("112323", "Georgy Malenkov", "Red Square 3 coffin"));
+        persons.add(new Person("222233", "Leonid Brezhnev", "Red Square 4 coffin"));
+        persons.add(new Person("111111", "Mikhail Gorbachev", "USA 32\\2 kv 1"));
 
-        // write to file
-        Writer writer = new Writer(persons, path);
-        writer.writeToFile();
-
-        // read from the file
-        //Reader reader = new Reader(path).readFromFile();
-        //reader.readFromFile();
-
-        // output to console
-        writer.writeToConsole();
-
-        // sorting, writing to file, reading from file and outputing to console
+        Writer writer = new Writer(path);
+        Reader reader = new Reader(persons, path);
         Sorter sorter = new Sorter(persons);
+
+        writeToFileReadFromFileWriteToConsole(persons, writer, reader);
+
         sorter.sort();
-        writer.writeToConsole();
-        //reader.readFromFile();
-        writer.writeToConsole();
+
+        writeToFileReadFromFileWriteToConsole(persons, writer, reader);
+    }
+
+    public static void writeToFileReadFromFileWriteToConsole(List<Person> persons, Writer writer, Reader reader) throws IOException, ClassNotFoundException {
+        writer.writeToFile(persons);
+        reader.readFromFile();
+        writer.writeToConsole(persons);
     }
 }

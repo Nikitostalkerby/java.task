@@ -1,23 +1,20 @@
-package task01.writer;
+package task01.io;
 
 import task01.core.Person;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.util.List;
 
 /**
  * Created by Vaas on 11.11.2015.
  */
 
-// package io reader and writer
 public class Writer {
-    //вот это плохо
-    private Person[] persons;
     private String path;
 
-    public Writer(Person[] persons, String path) {
-        this.persons = persons;
+    public Writer(String path) {
         this.path = path;
     }
 
@@ -29,16 +26,7 @@ public class Writer {
         this.path = path;
     }
 
-    public Person[] getPersons() {
-        return persons;
-    }
-
-    public void setPersons(Person[] persons) {
-        this.persons = persons;
-    }
-
-    // принимает лист
-    public void writeToFile() throws IOException {
+    public void writeToFile(List<Person> persons) throws IOException {
         try (ObjectOutputStream objectOutputStream = new
                 ObjectOutputStream(new FileOutputStream(this.path))) {
             for (Person person : persons) {
@@ -50,11 +38,8 @@ public class Writer {
 
     }
 
-    public void writeToConsole() {
-        System.out.println("===== write =====");
-        for (int i = 0; i < persons.length; i++) {
-            System.out.println(persons[i].toString());
-        }
+    public void writeToConsole(List<Person> persons) {
+        System.out.println(persons.toString());
     }
 
 

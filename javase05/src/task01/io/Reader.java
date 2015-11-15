@@ -1,18 +1,16 @@
-package task01.reader;
+package task01.io;
 
 import task01.core.Person;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.util.Arrays;
 import java.util.List;
 
 /**
  * Created by Vaas on 11.11.2015.
  */
 public class Reader {
-    //list. not array
     private List<Person> persons;
     private String path;
 
@@ -37,8 +35,7 @@ public class Reader {
         this.path = path;
     }
 
-    //return, not void
-    public void readFromFile() throws IOException, ClassNotFoundException {
+    public List<Person> readFromFile() throws IOException, ClassNotFoundException {
         try (ObjectInputStream objectInputStream = new
                 ObjectInputStream((new FileInputStream(path)))) {
             for (Person person : persons) {
@@ -49,5 +46,6 @@ public class Reader {
         } catch (ClassNotFoundException e) {
             System.out.print("ClassNotFoundException: " + e.toString());
         }
+        return persons;
     }
 }
