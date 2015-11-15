@@ -50,32 +50,4 @@ public class Reader {
             System.out.print("ClassNotFoundException: " + e.toString());
         }
     }
-
-    @Override
-    public String toString() {
-        return "Reader{" +
-                "persons=" + Arrays.toString(persons) +
-                ", path='" + path + '\'' +
-                '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Reader reader = (Reader) o;
-
-        // Probably incorrect - comparing Object[] arrays with Arrays.equals
-        if (!Arrays.equals(persons, reader.persons)) return false;
-        return !(path != null ? !path.equals(reader.path) : reader.path != null);
-
-    }
-
-    @Override
-    public int hashCode() {
-        int result = persons != null ? Arrays.hashCode(persons) : 0;
-        result = 31 * result + (path != null ? path.hashCode() : 0);
-        return result;
-    }
 }

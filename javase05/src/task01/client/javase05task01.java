@@ -26,8 +26,8 @@ public class javase05task01 {
         writer.writeToFile();
 
         // read from the file
-        Reader reader = new Reader(path).readFromFile();
-        reader.readFromFile();
+        //Reader reader = new Reader(path).readFromFile();
+        //reader.readFromFile();
 
         // output to console
         writer.writeToConsole();
@@ -36,7 +36,7 @@ public class javase05task01 {
         Sorter sorter = new Sorter(persons);
         sorter.sort();
         writer.writeToConsole();
-        reader.readFromFile();
+        //reader.readFromFile();
         writer.writeToConsole();
     }
 }

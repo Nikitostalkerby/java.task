@@ -14,11 +14,6 @@ public class Timer {
         this.second = second;
     }
 
-    //хорошо
-    public Timer() {
-
-    }
-
     public int getHour() {
         return hour;
     }
@@ -50,26 +45,5 @@ public class Timer {
                 ", minute=" + minute +
                 ", second=" + second +
                 '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Timer timer = (Timer) o;
-
-        if (hour != timer.hour) return false;
-        if (minute != timer.minute) return false;
-        return second == timer.second;
-
-    }
-
-    @Override
-    public int hashCode() {
-        int result = hour;
-        result = 31 * result + minute;
-        result = 31 * result + second;
-        return result;
     }
 }
