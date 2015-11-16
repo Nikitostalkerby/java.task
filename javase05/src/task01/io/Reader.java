@@ -48,4 +48,12 @@ public class Reader {
         }
         return persons;
     }
+
+    @Override
+    public String toString() {
+        return "Reader{" +
+                "persons=" + persons +
+                ", path='" + path + '\'' +
+                '}';
+    }
 }
