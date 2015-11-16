@@ -114,8 +114,8 @@ public class javase03task03 {
         }
 
         for (Sign sign : signs) {
-            if(sign.getbDay().getYear() <= inputYear)
-            System.out.println(sign.toString());
+            if (sign.getbDay().getYear() <= inputYear)
+                System.out.println(sign.toString());
         }
     }
 }

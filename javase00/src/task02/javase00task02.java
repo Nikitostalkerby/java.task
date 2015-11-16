@@ -12,7 +12,7 @@ public class javase00task02 {
 		 */
 
 		/*
-		 * Packet firstPacket = new Packet(5); Packet secondPacket = new
+         * Packet firstPacket = new Packet(5); Packet secondPacket = new
 		 * Packet(8);
 		 * 
 		 * Instruction ins = new Instruction(firstPacket, secondPacket, 4);

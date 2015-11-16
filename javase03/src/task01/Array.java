@@ -38,8 +38,8 @@ public class Array {
     public void writeArray() {
         System.out.println();
 
-        for(int i = 0; i < this.width; i++) {
-            for(int j = 0; j < this.height; j++) {
+        for (int i = 0; i < this.width; i++) {
+            for (int j = 0; j < this.height; j++) {
                 System.out.printf("%5d", array[i][j]);
             }
             System.out.println();
@@ -47,8 +47,8 @@ public class Array {
     }
 
     public void buildMatrix(Generator generator) {
-        for(int i = 0; i < this.width; i++) {
-            for(int j = 0; j < this.height; j++) {
+        for (int i = 0; i < this.width; i++) {
+            for (int j = 0; j < this.height; j++) {
                 array[i][j] = generator.generate();
             }
         }

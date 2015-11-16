@@ -1,7 +1,5 @@
 package task02;
 
-import java.io.IOException;
-
 /**
  * Created by Vaas on 06.11.2015.
  */

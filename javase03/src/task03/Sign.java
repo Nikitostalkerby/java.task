@@ -1,7 +1,5 @@
 package task03;
 
-import java.util.Scanner;
-
 /**
  * Created by Vaas on 06.11.2015.
  */
