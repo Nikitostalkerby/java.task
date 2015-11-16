@@ -1,6 +1,6 @@
 package task02.io;
 
-import task02.PetShop;
+import task02.core.PetShop;
 
 import java.io.FileOutputStream;
 import java.io.IOException;

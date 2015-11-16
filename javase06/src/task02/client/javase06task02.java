@@ -1,7 +1,7 @@
 package task02.client;
 
-import task02.Gender;
-import task02.PetShop;
+import task02.core.Gender;
+import task02.core.PetShop;
 import task02.io.Reader;
 import task02.io.Writer;
 

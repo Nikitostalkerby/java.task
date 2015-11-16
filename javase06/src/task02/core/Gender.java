@@ -1,4 +1,4 @@
-package task02;
+package task02.core;
 
 /**
  * Created by Vaas on 16.11.2015.

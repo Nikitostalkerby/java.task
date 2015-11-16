@@ -11,7 +11,7 @@ import java.util.List;
 public class javase04task02 {
     public static void main(String[] args) {
 
-        // util
+        // map
         Operation operation = new Operation();
 
         // input string and trim
