@@ -10,6 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/javase04/javase04.iml" filepath="$PROJECT_DIR$/javase04/javase04.iml" />
       <module fileurl="file://$PROJECT_DIR$/javase05/javase05.iml" filepath="$PROJECT_DIR$/javase05/javase05.iml" />
       <module fileurl="file://$PROJECT_DIR$/javase06/javase06.iml" filepath="$PROJECT_DIR$/javase06/javase06.iml" />
+      <module fileurl="file://$PROJECT_DIR$/maven-test/maven-test.iml" filepath="$PROJECT_DIR$/maven-test/maven-test.iml" />
     </modules>
   </component>
 </project>
