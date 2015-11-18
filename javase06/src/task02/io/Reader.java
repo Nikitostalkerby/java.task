@@ -37,7 +37,6 @@ public class Reader {
     }
 
     public List<PetShop> readFromFile() throws IOException, ClassNotFoundException {
-        System.out.println("=====readFromFile=====");
         try (ObjectInputStream objectInputStream = new
                 ObjectInputStream((new FileInputStream(path)))) {
             for (PetShop petShop : petShops) {
@@ -52,7 +51,6 @@ public class Reader {
     }
 
     public void readFromConsole(List<PetShop> petShops) {
-        System.out.println("=====readFromConsole=====");
         System.out.println("\n============Enter info about jivotnoe============");
 
         String pet = "";

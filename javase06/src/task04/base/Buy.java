@@ -15,6 +15,10 @@ public class Buy extends Product {
         this.commonWeight = this.number * super.getWeight();
     }
 
+    public Buy(){
+        super();
+    }
+
     public int getNumber() {
         return number;
     }

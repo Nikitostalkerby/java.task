@@ -11,7 +11,7 @@ public class Check extends Buy implements Serializable {
     }
 
     public Check() {
-        this("pelmeni", 12, 1, 30);
+        super();
     }
 
     @Override

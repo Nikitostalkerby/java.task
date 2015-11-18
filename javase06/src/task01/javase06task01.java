@@ -1,5 +1,6 @@
 package task01;
 
+
 import javax.swing.*;
 
 /**
@@ -7,8 +8,11 @@ import javax.swing.*;
  */
 public class javase06task01 {
     public static void main(String[] args) {
-        TG t = new TG();
+        // here
+        TG t = new TG(/*vot zdes*/);
+        // vo eto
         t.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //and this
         t.setVisible(true);
     }
 }

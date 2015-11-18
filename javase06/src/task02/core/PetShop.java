@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Created by Vaas on 16.11.2015.
  */
-public class PetShop implements Serializable {
+public class PetShop implements Serializable, Cloneable {
     private String pet;
     private Gender gender;
     private String name;
@@ -30,10 +30,6 @@ public class PetShop implements Serializable {
         this.name = petShop.name;
         this.price = petShop.price;
         this.count = petShop.count;
-    }
-
-    public static PetShop newInstance(PetShop petShop) {
-        return new PetShop(petShop.getPet(), petShop.getGender(), petShop.getName(), petShop.getPrice(), petShop.getCount());
     }
 
     public String getPet() {
@@ -121,13 +117,7 @@ public class PetShop implements Serializable {
     }
 
     @Override
-    protected Object clone() throws CloneNotSupportedException {
-        return super.clone();
-    }
-
-    @Override
-    protected void finalize() throws Throwable {
-        super.finalize();
-        System.out.println("\nmarka_avto");
+    public PetShop clone() throws CloneNotSupportedException {
+        return (PetShop)super.clone();
     }
 }

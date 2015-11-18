@@ -19,14 +19,13 @@ public class javase06task04 {
 
         List<Check> checkList = new ArrayList<>();
         Writer writer = new Writer(path);
-        Reader reader = new Reader(checkList, path);
+        Reader reader = new Reader(path);
 
-        checkList.add(new Check());
-        checkList.add(new Check("kotleta", 10, 2, 30));
+        /*checkList.add(new Check());
+        checkList.add(new Check("kotleta", 10, 2, 30));*/
 
-        writer.writeToFile(checkList);
+        //writer.writeToFile(checkList);
         reader.readFromFile();
         writer.writeToConsole(checkList);
-
     }
 }

@@ -22,11 +22,11 @@ class GraphPanel extends JPanel {
         // максимальная высота = 1, минимальная = -1
         // Вычисляем коэффициенты
 
-        double Kx = getWidth() / 10.0;
-        double Ky = getHeight() / 11.0;
+        double Kx = getWidth() / 11.0;
+        double Ky = getHeight() / 12.0;
 
-        double xo = -1;
-        double yo = -1;
+        double xo = -1.0;
+        double yo = -1.5;
 
         double x = 0;
         for (Iterator<Double> it = data.iterator(); it.hasNext(); ) {

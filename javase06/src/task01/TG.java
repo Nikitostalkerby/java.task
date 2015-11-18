@@ -14,6 +14,6 @@ public class TG extends JFrame {
 
         GraphPanel graphPanel = new GraphPanel(vector);
         getContentPane().add(graphPanel);
-        setBounds(100, 100, 300, 300);
+        setBounds(640, 640, 400, 400);
     }
 }

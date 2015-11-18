@@ -14,6 +14,10 @@ public class Product {
         this.weight = weight;
     }
 
+    public Product() {
+
+    }
+
     public String getName() {
         return name;
     }

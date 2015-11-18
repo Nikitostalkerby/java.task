@@ -13,6 +13,7 @@ public class MyMap {
         map = new HashMap<>();
     }
 
+    // обход регул€ркой
     private void writeToMap(String text) {
         for (String word : text.toLowerCase().split("\\W")) {
             if (map.containsKey(word)) {
@@ -33,7 +34,7 @@ public class MyMap {
         return max;
     }
 
-    public String returnWord(String text) {
+    public String getWord(String text) {
         writeToMap(text);
         int max = findMaxValue();
         for (Map.Entry entry : map.entrySet()) {

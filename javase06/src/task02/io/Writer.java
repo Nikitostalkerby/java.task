@@ -26,7 +26,6 @@ public class Writer {
     }
 
     public void writeToFile(List<PetShop> petShops) throws IOException {
-        System.out.println("=====writeToFile=====");
         try (ObjectOutputStream objectOutputStream = new
                 ObjectOutputStream(new FileOutputStream(this.path))) {
             for (PetShop petShop : petShops) {
@@ -39,7 +38,6 @@ public class Writer {
     }
 
     public void writeToConsole(List<PetShop> petShops) {
-        System.out.println("=====writeToConsole=====");
         System.out.println(petShops.toString());
     }
 
