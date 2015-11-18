@@ -1,9 +1,11 @@
 package core;
 
+import gson.JsonFileSerializer;
 import gson.Serializer;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -14,6 +16,10 @@ public class PersonManager {
     private List<Person> persons;
     private Serializer serializer;
     private String dbPath;
+
+    public PersonManager(String dbPath) {
+        this(new ArrayList<Person>(), new JsonFileSerializer(), dbPath);
+    }
 
     public PersonManager(List<Person> persons, Serializer serializer, String dbPath) {
         this.persons = persons;

@@ -26,8 +26,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="maven-test" target="1.5" />
-      <module name="test" target="1.5" />
+      <module name="maven-test" target="" />
     </bytecodeTargetLevel>
   </component>
 </project>

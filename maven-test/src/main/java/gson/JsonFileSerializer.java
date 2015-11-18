@@ -4,13 +4,9 @@ package gson;
  * Created by Vaas on 18.11.2015.
  */
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-
 import com.google.gson.Gson;
+
+import java.io.*;
 
 public class JsonFileSerializer implements Serializer {
     private Gson gson;
