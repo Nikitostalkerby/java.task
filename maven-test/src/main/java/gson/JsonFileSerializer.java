@@ -1,6 +1,9 @@
+package gson;
+
 /**
  * Created by Vaas on 18.11.2015.
  */
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
