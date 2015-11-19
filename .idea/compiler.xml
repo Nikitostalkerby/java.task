@@ -22,11 +22,31 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="maven-test" />
+        <module name="gson.example" />
+        <module name="javase00" />
+        <module name="javase01" />
+        <module name="javase02" />
+        <module name="javase03" />
+        <module name="javase04" />
+        <module name="javase05" />
+        <module name="javase06" />
+        <module name="serializer" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="maven-test" target="" />
+    <bytecodeTargetLevel target="1.8">
+      <module name="gson.example" target="1.8" />
+      <module name="java.task" target="1.8" />
+      <module name="javase00" target="1.8" />
+      <module name="javase01" target="1.8" />
+      <module name="javase02" target="1.8" />
+      <module name="javase03" target="1.8" />
+      <module name="javase04" target="1.8" />
+      <module name="javase05" target="1.8" />
+      <module name="javase06" target="1.8" />
+      <module name="serializer" target="1.8" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="GENERATE_NO_WARNINGS" value="true" />
   </component>
 </project>
