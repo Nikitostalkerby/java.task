@@ -11,6 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/javase04/javase04.iml" filepath="$PROJECT_DIR$/javase04/javase04.iml" />
       <module fileurl="file://$PROJECT_DIR$/javase05/javase05.iml" filepath="$PROJECT_DIR$/javase05/javase05.iml" />
       <module fileurl="file://$PROJECT_DIR$/javase06/javase06.iml" filepath="$PROJECT_DIR$/javase06/javase06.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javase07/javase07.iml" filepath="$PROJECT_DIR$/javase07/javase07.iml" />
       <module fileurl="file://$PROJECT_DIR$/serializer/serializer.iml" filepath="$PROJECT_DIR$/serializer/serializer.iml" />
     </modules>
   </component>
