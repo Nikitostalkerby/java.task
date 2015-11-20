@@ -9,7 +9,7 @@ import java.util.Scanner;
  */
 public class javase07task01 {
     public static void main(String[] args) {
-        char[] alphabet = WordGenerator.initAllowedCharacters('a', 'b');
+        char[] alphabet = WordGenerator.initAllowedCharacters('a', 'z');
         int wordlength = 4;
 
         String input = "";
