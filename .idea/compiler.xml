@@ -36,6 +36,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
       <module name="gson.example" target="1.8" />
+      <module name="hibernate.example" target="1.8" />
       <module name="java.task" target="1.8" />
       <module name="javase00" target="1.8" />
       <module name="javase01" target="1.8" />
