@@ -19,6 +19,7 @@
         <module>serializer</module>
         <module>gson.example</module>
         <module>javase07</module>
+        <module>javase08</module>
     </modules>
 
     <properties>

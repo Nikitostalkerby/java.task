@@ -31,6 +31,7 @@
         <module name="javase05" />
         <module name="javase06" />
         <module name="javase07" />
+        <module name="javase08" />
         <module name="serializer" />
       </profile>
     </annotationProcessing>
@@ -46,6 +47,7 @@
       <module name="javase05" target="1.8" />
       <module name="javase06" target="1.8" />
       <module name="javase07" target="1.8" />
+      <module name="javase08" target="1.8" />
       <module name="serializer" target="1.8" />
     </bytecodeTargetLevel>
   </component>
