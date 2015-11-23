@@ -17,7 +17,7 @@ public class WordGenerator {
         this.radix = alphabet.length;
     }
 
-    public synchronized String generateNext() {
+    public String generateNext() {
         if (hasNext()) {
             int[] indices = convertToRadix(wordNumber);
             char[] word = new char[wordlength];
@@ -31,7 +31,7 @@ public class WordGenerator {
     }
 
     public boolean hasNext() {
-        return (wordNumber < maxWords);
+        return wordNumber < maxWords;
     }
 
     private int[] convertToRadix(long number) {

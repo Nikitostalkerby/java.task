@@ -22,11 +22,11 @@ public class javase07task01 {
 
         WordGenerator gen = new WordGenerator(alphabet, wordlength);
         while(gen.hasNext()) {
-            if(input.equals(gen.generateNext())) {
+            String word = gen.generateNext();
+            System.out.println(word);
+            if(input.equals(word)) {
                 System.out.println("\nAccess: " + input);
                 break;
-            } else {
-                System.out.println(gen.generateNext());
             }
         }
     }
