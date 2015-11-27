@@ -6,14 +6,14 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Created by Vaas on 23.11.2015.
+ * Created by Vaas on 27.11.2015.
  */
-public class MACValidator implements Validate {
+public class BracketValidator implements Validate {
     private Pattern pattern;
 
-    private static final String ABC_PATTERN = "([0-9a-fA-F]{2}([:-]|$)){6}$|([0-9a-fA-F]{4}([.]|$)){3}";
+    private static final String ABC_PATTERN = "(?i)\\{?[a-z\\d]{8}-([a-z\\d]{4}-){3}[a-z\\d]{12}\\}?";
 
-    public MACValidator() {
+    public BracketValidator() {
         pattern = Pattern.compile(ABC_PATTERN);
     }
 

@@ -1,6 +1,6 @@
 package regulars;
 
-import impl.Validable;
+import impl.Validate;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -8,10 +8,9 @@ import java.util.regex.Pattern;
 /**
  * Created by Vaas on 23.11.2015.
  */
-public class ABCValidator implements Validable {
+public class ABCValidator implements Validate {
 
     private Pattern pattern;
-    private Matcher matcher;
 
     private static final String ABC_PATTERN = "abcdefghijklmnopqrstuv18340";
 
@@ -21,7 +20,7 @@ public class ABCValidator implements Validable {
 
     @Override
     public boolean validate(final String line) {
-        matcher = pattern.matcher(line);
+        Matcher matcher = pattern.matcher(line);
         return matcher.matches();
     }
 }

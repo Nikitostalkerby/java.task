@@ -6,14 +6,14 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Created by Vaas on 23.11.2015.
+ * Created by Vaas on 27.11.2015.
  */
-public class MACValidator implements Validate {
+public class IPValidator implements Validate {
     private Pattern pattern;
 
-    private static final String ABC_PATTERN = "([0-9a-fA-F]{2}([:-]|$)){6}$|([0-9a-fA-F]{4}([.]|$)){3}";
+    private static final String ABC_PATTERN = "^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$";
 
-    public MACValidator() {
+    public IPValidator() {
         pattern = Pattern.compile(ABC_PATTERN);
     }
 

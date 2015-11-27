@@ -1,6 +1,6 @@
 package regulars;
 
-import impl.Validable;
+import impl.Validate;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -8,9 +8,8 @@ import java.util.regex.Pattern;
 /**
  * Created by Vaas on 23.11.2015.
  */
-public class URLValidator implements Validable {
+public class URLValidator implements Validate {
     private Pattern pattern;
-    private Matcher matcher;
 
     private static final String ABC_PATTERN = "^(https?://)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([/\\w \\.-]*)*/?$";
 
@@ -20,7 +19,7 @@ public class URLValidator implements Validable {
 
     @Override
     public boolean validate(final String line) {
-        matcher = pattern.matcher(line);
+        Matcher matcher = pattern.matcher(line);
         return matcher.matches();
     }
 }
