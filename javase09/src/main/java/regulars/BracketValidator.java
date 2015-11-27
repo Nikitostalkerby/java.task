@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
 public class BracketValidator implements Validate {
     private Pattern pattern;
 
-    private static final String ABC_PATTERN = "(?i)\\{?[a-z\\d]{8}-([a-z\\d]{4}-){3}[a-z\\d]{12}\\}?";
+    private static final String ABC_PATTERN = "\\((.*)\\)+";
 
     public BracketValidator() {
         pattern = Pattern.compile(ABC_PATTERN);
