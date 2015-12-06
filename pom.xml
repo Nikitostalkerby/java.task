@@ -21,6 +21,7 @@
         <module>javase07</module>
         <module>javase08</module>
         <module>javase09</module>
+        <module>javase10</module>
     </modules>
 
     <properties>
