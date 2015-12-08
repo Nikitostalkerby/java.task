@@ -17,7 +17,7 @@
         <module>javase05</module>
         <module>javase06</module>
         <module>serializer</module>
-        <module>com.github.union.one.gson.example</module>
+        <module>gson.example</module>
         <module>javase07</module>
         <module>javase08</module>
         <module>javase09</module>
